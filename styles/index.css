@@ -31,7 +31,7 @@ body {
 .container, .button-container {
     display: flex;
     justify-content: center;
-    margin-top: 25vh;
+    margin-top: 50;
 }
 
 .button-container {
@@ -52,6 +52,17 @@ body {
 }
 
 /* *Playground styling */
+
+.container {
+    display: grid;
+}
+
+.message {
+    text-align: center;
+    height: 20px;
+    margin-bottom: 40px;
+    font-size: 1.4em;
+}
 
 .playground {
     display: grid;
