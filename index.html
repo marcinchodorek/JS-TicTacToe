@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicTacToe</title>
+    <link rel="stylesheet" href="./styles/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="player-selection">
+        <div class="player-one">
+            <h2>Player 1</h2>
+            <select name="Choose the icon" class="icon-selection" id="player-one-icon">
+                <option value="cross">X</option>
+                <option value="hash">#</option>
+            </select>
+        </div>
+        <div class="player-two">
+            <h2>Player 2</h2>
+            <select name="Choose the icon" class="icon-selection" id="player-two-icon">
+                <option value="circle">O</option>
+                <option value="dollar">$</option>
+            </select>
+        </div>
+    </div>
+    <div class="container">
+        <div class="playground">
+            <div class="block block_0" id=0></div>
+            <div class="block block_1" id=1></div>
+            <div class="block block_2" id=2></div>
+            <div class="block block_3" id=3></div>
+            <div class="block block_4" id=4></div>
+            <div class="block block_5" id=5></div>
+            <div class="block block_6" id=6></div>
+            <div class="block block_7" id=7></div>
+            <div class="block block_8" id=8></div>
+        </div>
+    </div>
+    <div class="button-container">
+        <button class="reset-btn">Reset</button>
+    </div>
+    <script src="./scripts/index.js"></script>
+</body>
+
+</html>

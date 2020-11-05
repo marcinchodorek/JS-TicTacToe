@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color:#43ba77;
+    font-family: 'Lato', sans-serif;
+}
+
+/* * Player selection */
+
+.player-selection {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.icon-selection {
+    font-size: 2em;
+    width: 100px;
+    border: none;
+    border-radius: 5px;
+}
+
+.icon-selection:focus {
+    outline: none;
+}
+
+/* * Reset button */
+
+.container, .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 25vh;
+}
+
+.button-container {
+    margin-top: 30px;
+}
+
+.reset-btn {
+    font-size: 1.3em;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    background-color:#33915c;
+    color: white;
+}
+
+.reset-btn:focus {
+    outline: none;
+}
+
+/* *Playground styling */
+
+.playground {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-template-rows: 1fr 1fr 1fr; */
+}
+
+.block {
+    width: 150px;
+    height: 150px;
+    /* border: 1px solid black; */
+    font-size: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.block_0 {
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.block_1 {
+    border-bottom: 1px solid black;
+}
+
+.block_2 {
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+}
+
+.block_3 {
+    border-right: 1px solid black;
+}
+
+.block_5 {
+    border-left: 1px solid black;
+}
+
+.block_6 {
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.block_7 {
+    border-top: 1px solid black;
+}
+
+.block_8 {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+}
+
+
+
