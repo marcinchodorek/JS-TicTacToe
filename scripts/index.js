@@ -4,7 +4,7 @@ const reset = document.querySelector('.reset-btn');
 const message = document.querySelector('.message');
 
 let isActive = true;
-let board_state = ['', '', '', '', '', '', '', '', ''];
+let boardState = ['', '', '', '', '', '', '', '', ''];
 const playersPoints = class {
     player1 = 0;
     player2 = 0;
@@ -31,16 +31,16 @@ const playerAction = (e) => {
     const clickedBlock = e.target;
     const clickedBlockIndex = parseInt(clickedBlock.getAttribute('id'));
 
-    if (board_state[clickedBlockIndex]) {
+    if (boardState[clickedBlockIndex] || !isActive) {
         return;
-    } else board_state[clickedBlockIndex] = currentPlayer;
+    } else boardState[clickedBlockIndex] = currentPlayer;
     blocks[clickedBlockIndex].innerHTML = currentPlayer;
-    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-    message.innerHTML = turnMessage();
+    handleResult();
 };
 
 
 const handleResult = () => {
+    let roundWon = false;
     const winningConditions = [
         [0, 1, 2],
         [3, 4, 5],
@@ -50,13 +50,40 @@ const handleResult = () => {
         [2, 5, 8],
         [0, 4, 8],
         [2, 4, 6]
-    ]
+    ];
 
+    for (let i = 0; i <= 7; i++) {
+        const winCondition = winningConditions[i];
+        let tmpA = boardState[winCondition[0]];
+        let tmpB = boardState[winCondition[1]];
+        let tmpC = boardState[winCondition[2]];
+        console.log('A' + tmpA);
+        console.log('B' + tmpB);
+        console.log('C' + tmpC);
+        if (tmpA === '' || tmpB === '' || tmpC === '') {
+            continue;
+        }
+        if (tmpA === tmpB && tmpB === tmpC) {
+            roundWon = true;
+            break;
+        }
+    }
+    if (roundWon) {
+        message.innerHTML = winMessage();
+        isActive = false;
+        return;
+    }
+    handlePlayerChange();
+}
 
+const handlePlayerChange = () => {
+    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+    message.innerHTML = turnMessage();
 }
 
 const resetPlayground = () => {
-    board_state = ['', '', '', '', '', '', '', '', ''];
+    boardState = ['', '', '', '', '', '', '', '', ''];
+    isActive = true;
     message.innerHTML = "";
     blocks.forEach(block => {
         block.innerHTML = '';
@@ -69,5 +96,3 @@ reset.addEventListener('click', resetPlayground);
 blocks.forEach(block => {
     block.addEventListener('click', playerAction);
 });
-
-
